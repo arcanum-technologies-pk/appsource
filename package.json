@@ -1,0 +1,19 @@
+{
+  "name": "vpn",
+  "version": "1.0.0",
+  "description": "api call",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "keywords": [
+    "api",
+    "call"
+  ],
+  "author": "umer rasheed dar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.20.0"
+  }
+}
