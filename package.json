@@ -4,16 +4,19 @@
   "description": "api call",
   "main": "index.js",
   "scripts": {
-    "start": "node index"
+    "start": "nodemon index.js"
   },
   "keywords": [
     "api",
+    "branch",
+    "appsource",
     "call"
   ],
   "author": "umer rasheed dar",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.20.0"
+    "express": "^4.20.0",
+    "nodemon": "^3.1.7"
   }
 }
