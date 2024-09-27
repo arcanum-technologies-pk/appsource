@@ -32,21 +32,28 @@ function parseConfData(data) {
   
     lines.forEach(line => {
       line = line.trim();
-        // console.log(line)
-
+         
+      
       if (line.startsWith('[') && line.endsWith(']')) {
         currentSection = line.slice(1, -1); 
-
+        
         result[currentSection] = {};
-
-
+        
+      } else if (line.slice(0, 3) == 'DNS'){
+        const [key, value] =  line.split(' =').map(part => part.trim());
+        result[currentSection][key] = value.split(',')[0];
+       // console.log(value.split(',')[0]);
+      }else if (line.slice(0, 10) == 'AllowedIPs'){
+        const [key, value] =  line.split(' =').map(part => part.trim());
+        result[currentSection][key] = value.split(',')[0];
+       // console.log(value.split(',')[0]);
       } else if (line && currentSection) {
-        const [key, value] =  line.split('=').map(part => part.trim());
+        const [key, value] =  line.split(' =').map(part => part.trim());
         result[currentSection][key] = value;
-
+        
       }
     });
-  
+    
     return result;
 }
 
